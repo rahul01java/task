@@ -18,3 +18,23 @@ git add README.md
 git commit -m "first commit"
 git remote add origin https://github.com/rahul01java/tusk.git
 git push -u origin master
+
+3------------------------------------------------------------------------
+#_usefull docker command 
+ 
+   1- to pull image from docker hub = docker pull hello-world
+   2- to run image = docker run image =hello-world
+   3 to check container is running or not= docker ps , docker ps -a
+   4 to check docker container id = docker ps -aq
+   5 to delete docker container =docker container rm keen_bohr(container name)
+   6 to build image =docker build -t spring-boot-websocket-chat-demo .
+   7 to run docker image =docker run -p 5000:8080 -t spring-boot-websocket-chat-demo   
+   error solving 
+   
+        docker-machine regenerate-certs default
+    Regenerate TLS machine certs?  Warning: this is irreversible. (y/n): y
+    Regenerating TLS certificates
+	 docker-machine restart default
+	 (docker-machine env default)
+	 192.168.99.100
+	 docker run -d --hostname my-test-rabbit --name test-rabbit -p 15672:15672 -p 5672:5672 rabbitmq:3-management
