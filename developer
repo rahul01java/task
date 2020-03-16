@@ -11,3 +11,10 @@ FROM java:8
 EXPOSE 8487
 COPY zuul-0.0.1-SNAPSHOT.jar /home/zuul-0.0.1-SNAPSHOT.jar
 CMD ["java","-jar","/home/zuul-0.0.1-SNAPSHOT.jar"]
+
+echo "# tusk" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/rahul01java/tusk.git
+git push -u origin master
