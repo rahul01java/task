@@ -40,3 +40,19 @@ git push -u origin master
 	 192.168.99.100
 	 docker-machine ip to get ip adress
 	 docker run -d --hostname my-test-rabbit --name test-rabbit -p 15672:15672 -p 5672:5672 rabbitmq:3-management
+	 minikube stop
+kubectl get node          to get node
+kubectl get cs          to check health status scuster state
+kubectl config get-clusters
+kubectl config get-context
+kubectl describe deployments to see details
+cat .kube/config             to check where all the clusters info is save
+kubectl run nginx --image=nginx:alpine --port 80  sample pod of enginex
+
+ kubectl create deployment nginx --image=nginx
+ 
+   expose deployment nginx --type=NodePort --port=8080
+  
+   kubectl create service nodeport nginx --tcp=80:80  
+  
+kubectl delete pods podname    to delete pods
