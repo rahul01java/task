@@ -1,0 +1,33 @@
+R2DBC specifies a new API to allow reactive code that works efficiently with relational databases.
+
+R2DBC is a specification designed from the ground up for reactive programming with SQL databases. It defines a non-blocking SPI for database driver implementors and client library authors. R2DBC drivers fully implement the database wire protocol on top of a non-blocking I/O layer.
+
+R2DBC provides non-blocking reactive APIs to relational database programmers in Java. It is an open specification, similar to JDBC. JDBC however uses a thread per connection while R2DBC can handle more connections using less threads 
+So Less CPU is required because less threads means less context switches.
+
+Using less threads means
+
+using less memory; threads require memory
+using less CPU; less context switches
+Thus in theory higher performance using the same resources at high concurrency.
+
+Less CPU is required to process a single request. 
+Less memory required to process a single request. 
+Response times at high concurrency are better.
+Throughput at high concurrency is better
+The fat JAR size is smaller (no JPA with R2DBC)
+When using only blocking components, memory and CPU usage will become less efficient at high concurrency
+WebFlux with JDBC does not appear to be a good idea. Web MVC with R2DBC works better at high concurrency than Web MVC with JDBC.
+
+
+response times
+
+throughput
+CPU used
+memory used
+
+Some challenges when using R2DBC
+JPA cannot deal with reactive repositories such as provided by Spring Data R2DBC. This means you will have to do more things manually when using R2DBC.
+There are other reactive drivers around such as for example Quarkus Reactive Postgres client (which uses Vert.x). This does not use R2DBC and has different performance characteristics (see here).
+Limited availability
+Not all relational databases have reactive drivers available. For example, Oracle does not (yet?) have an R2DBC implementation.
